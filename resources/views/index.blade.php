@@ -144,10 +144,13 @@
 		</div>
 
         @yield('scripts')
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+		<script src="http://malsup.github.io/jquery.blockUI.js"></script>
 		<script src="/js/bootstrap.bundle.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js"></script>
 		<script src="/js/dashboard.js"></script>
 		<script src="/js/color-modes.js"></script>
+		<script src="/js/projeto.js"></script>
 
 	</body>
 </html>
