@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FormRequestProduto;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 
@@ -30,10 +31,14 @@ class ProdutosController extends Controller
         return response()->json(['succes' => true]);
     }
 
-    public function cadastrarProduto(Request $request)
+    public function cadastrarProduto(FormRequestProduto $request)
     {
         if ($request->method() == "POST") {
             //cria os dados
+            $data = $request->all();
+            Produto::create($data);
+
+            return redirect()->route('produtos.index');
         }
         
         return view('pages.produtos.create');
