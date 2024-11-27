@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\FormRequestProduto;
+use App\Models\Componentes;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 
@@ -36,6 +37,8 @@ class ProdutosController extends Controller
         if ($request->method() == "POST") {
             //cria os dados
             $data = $request->all();
+            $componentes = new Componentes();
+            $data['valor'] = $componentes->formatacaoMascaraDinheiroDecimal($data['valor']);
             Produto::create($data);
 
             return redirect()->route('produtos.index');
