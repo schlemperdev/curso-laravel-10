@@ -20,7 +20,7 @@ function deleteRegistroPaginacao (rotaUrl, idDoRegistro){
             } else {
                 alert('Nao foi possivel excluir');
             }
-        }).fail(function (data){
+        }).fail(function (data) {
             $.unblockUI();
             alert('Nao foi possivel buscar os dados');
         });
