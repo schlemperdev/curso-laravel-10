@@ -10,6 +10,7 @@
 	<title>Sistema Gestao</title>
 		
     @yield('styles')
+	<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <link rel="stylesheet" href="{{ asset('css/docsearch.css')}}">
 	<link href="{{ asset('css/bootstrap.css')}}" rel="stylesheet">
         
@@ -152,6 +153,9 @@
 		<script src="/js/dashboard.js"></script>
 		<script src="/js/color-modes.js"></script>
 		<script src="/js/projeto.js"></script>
+		<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 
+
+		{!! Toastr::message() !!}
 	</body>
 </html>

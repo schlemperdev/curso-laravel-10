@@ -15,7 +15,7 @@ function deleteRegistroPaginacao (rotaUrl, idDoRegistro){
             },
         }).done(function (data) {
             $.unblockUI();
-            if (data.succes == true){
+            if (data.success == true){
                 window.location.reload();
             } else {
                 alert('Nao foi possivel excluir');

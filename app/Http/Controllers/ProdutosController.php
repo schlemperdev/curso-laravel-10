@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\FormRequestProduto;
 use App\Models\Componentes;
 use App\Models\Produto;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
 use function Laravel\Prompts\search;
@@ -29,7 +30,7 @@ class ProdutosController extends Controller
         $buscaRegistro = Produto::find($id);
         $buscaRegistro->delete();
 
-        return response()->json(['succes' => true]);
+        return response()->json(['success' => true]);
     }
 
     public function cadastrarProduto(FormRequestProduto $request)
@@ -41,6 +42,7 @@ class ProdutosController extends Controller
             $data['valor'] = $componentes->formatacaoMascaraDinheiroDecimal($data['valor']);
             Produto::create($data);
 
+            Toastr::success('Produto incluído com sucesso', 'Cadastro realizado');
             return redirect()->route('produtos.index');
         }
         
