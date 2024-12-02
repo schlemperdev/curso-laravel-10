@@ -37,12 +37,12 @@ $("#cep").blur(function () {
         if (validacep.test(cep)) {
             $("#logradouro").val("");
             $("#bairro").val(" ");
-            $("#endereco").val(" ");
+            $("#cidade").val(" ");
             $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
                 if (!("erro" in dados)) {
                     $("#logradouro").val(dados.logradouro.toUpperCase());
                     $("#bairro").val(dados.bairro.toUpperCase());
-                    $("#endereco").val(dados.localidade.toUpperCase());
+                    $("#cidade").val(dados.localidade.toUpperCase());
                 }
                 else {
                     alert("CEP não encontrado de forma automática, digite faça o cadastro manual ou tente novamente.");

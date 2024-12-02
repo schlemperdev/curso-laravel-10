@@ -44,9 +44,9 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Cidade</label>
-            <input id="endereco" type="text" value="{{ old('endereco') }}" class="form-control @error('endereco') is-invalid @enderror" name="endereco">
-            @if ($errors->has('endereco'))
-                <div class="invalid-feedback"> {{ $errors->first('endereco') }} </div>
+            <input id="cidade" type="text" value="{{ old('cidade') }}" class="form-control @error('cidade') is-invalid @enderror" name="cidade">
+            @if ($errors->has('cidade'))
+                <div class="invalid-feedback"> {{ $errors->first('cidade') }} </div>
             @endif
         </div>
         <button type="submit" class="btn btn-success">Cadastrar</button>

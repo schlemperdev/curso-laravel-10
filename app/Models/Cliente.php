@@ -12,7 +12,7 @@ class Cliente extends Model
     protected $fillable = [
         'nome',
         'email',
-        'endereço',
+        'cidade',
         'logradouro',
         'cep',
         'bairro',
@@ -31,8 +31,8 @@ class Cliente extends Model
                 $query->orWhere('cep', $search);
                 $query->orWhere('cep', 'LIKE', "%{$search}%");
 
-                $query->orWhere('endereço', $search);
-                $query->orWhere('endereço', 'LIKE', "%{$search}%");
+                $query->orWhere('cidade', $search);
+                $query->orWhere('cidade', 'LIKE', "%{$search}%");
 
                 $query->orWhere('logradouro', $search);
                 $query->orWhere('logradouro', 'LIKE', "%{$search}%");

@@ -24,10 +24,10 @@
                     <th>ID</th>
                     <th>Nome</th>
                     <th>E-mail</th>
-                    <th>Endereço</th>
                     <th>Logradouro</th>
-                    <th>CEP</th>
                     <th>Bairro</th>
+                    <th>Cidade</th>
+                    <th>CEP</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -37,10 +37,10 @@
                         <td>{{ $cliente->id }}</td>
                         <td>{{ $cliente->nome }}</td>
                         <td>{{ $cliente->email }}</td>
-                        <td>{{ $cliente->endereço }}</td>
                         <td>{{ $cliente->logradouro }}</td>
-                        <td>{{ $cliente->cep }}</td>
                         <td>{{ $cliente->bairro }}</td>
+                        <td>{{ $cliente->cidade }}</td>
+                        <td>{{ $cliente->cep }}</td>
                         <td>
                             <meta name='csrf-token' content="{{ csrf_token() }}"/>
                             <a href="{{ route('atualizar.cliente', $cliente->id) }}" class="btn btn-dark btn-sm">

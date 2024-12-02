@@ -13,8 +13,8 @@ class ClientesSeeder extends Seeder
         Cliente::create([
             'nome' => 'Cliente Teste',
             'email' => 'teste@teste.com.br',
-            'endereço' => 'Rua Fictícia, 255',
-            'logradouro' => 'Cidade Fantasma',
+            'cidade' => 'Cidade Fantasma',
+            'logradouro' => 'Rua Fictícia, 255',
             'cep' => '88150-000',
             'bairro' => 'Bairro Aleatório',
         ]

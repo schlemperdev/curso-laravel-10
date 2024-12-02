@@ -19,7 +19,7 @@ class FormRequestCliente extends FormRequest
             $request = [
                 'nome' => 'required',
                 'email' => 'required',
-                'endereço',
+                'cidade',
                 'logradouro',
                 'cep',
                 'bairro',

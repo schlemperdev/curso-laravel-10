@@ -23,31 +23,31 @@
             @endif
         </div>
         <div class="mb-3">
-            <label class="form-label">Endereço</label>
-            <input type="text" value="{{ isset($findCliente->endereco) ? $findCliente->endereco : old('endereco') }}" class="form-control @error('endereco') is-invalid @enderror" name="endereco">
-            @if ($errors->has('endereco'))
-                <div class="invalid-feedback"> {{ $errors->first('endereco') }} </div>
-            @endif
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Logradouro</label>
-            <input type="text" value="{{ isset($findCliente->logradouro) ? $findCliente->logradouro : old('logradouro') }}" class="form-control @error('logradouro') is-invalid @enderror" name="logradouro">
-            @if ($errors->has('logradouro'))
-                <div class="invalid-feedback"> {{ $errors->first('logradouro') }} </div>
-            @endif
-        </div>
-        <div class="mb-3">
             <label class="form-label">CEP</label>
-            <input type="text" value="{{ isset($findCliente->cep) ? $findCliente->cep : old('cep') }}" class="form-control @error('cep') is-invalid @enderror" name="cep">
+            <input id="cep" type="text" value="{{ isset($findCliente->cep) ? $findCliente->cep : old('cep') }}" class="form-control @error('cep') is-invalid @enderror" name="cep">
             @if ($errors->has('cep'))
                 <div class="invalid-feedback"> {{ $errors->first('cep') }} </div>
             @endif
         </div>
         <div class="mb-3">
+            <label class="form-label">Logradouro</label>
+            <input id="logradouro" type="text" value="{{ isset($findCliente->logradouro) ? $findCliente->logradouro : old('logradouro') }}" class="form-control @error('logradouro') is-invalid @enderror" name="logradouro">
+            @if ($errors->has('logradouro'))
+                <div class="invalid-feedback"> {{ $errors->first('logradouro') }} </div>
+            @endif
+        </div>
+        <div class="mb-3">
             <label class="form-label">Bairro</label>
-            <input type="text" value="{{ isset($findCliente->bairro) ? $findCliente->bairro : old('bairro') }}" class="form-control @error('bairro') is-invalid @enderror" name="bairro">
+            <input id="bairro" type="text" value="{{ isset($findCliente->bairro) ? $findCliente->bairro : old('bairro') }}" class="form-control @error('bairro') is-invalid @enderror" name="bairro">
             @if ($errors->has('bairro'))
                 <div class="invalid-feedback"> {{ $errors->first('bairro') }} </div>
+            @endif
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Cidade</label>
+            <input id="cidade" type="text" value="{{ isset($findCliente->cidade) ? $findCliente->cidade : old('cidade') }}" class="form-control @error('cidade') is-invalid @enderror" name="cidade">
+            @if ($errors->has('cidade'))
+                <div class="invalid-feedback"> {{ $errors->first('cidade') }} </div>
             @endif
         </div>
         <button type="submit" class="btn btn-success">Salvar</button>
