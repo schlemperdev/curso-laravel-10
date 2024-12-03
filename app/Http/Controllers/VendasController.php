@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\FormRequestVenda;
+use App\Models\Cliente;
+use App\Models\Produto;
 use App\Models\Venda;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
@@ -23,15 +25,19 @@ class VendasController extends Controller
 
     public function cadastrarVenda(FormRequestVenda $request)
     {
+        $findNumeroVenda = Venda::max('numeroDaVenda') + 1;
+        $findProduto = Produto::all();
+        $findCliente = Cliente::all();
+
         if ($request->method() == "POST") {
             //cria os dados
             $data = $request->all();
+            $data['numeroDaVenda'] = $findNumeroVenda;
             Venda::create($data);
             Toastr::success('Venda incluída com sucesso', 'Cadastro realizado');
             return redirect()->route('vendas.index');
         }
         
-        $findNumeroVenda = Venda::max('numeroDaVenda') + 1;
-        return view('pages.vendas.create', compact('findNumeroVenda'));
+        return view('pages.vendas.create', compact('findNumeroVenda', 'findProduto', 'findCliente'));
     }
 }

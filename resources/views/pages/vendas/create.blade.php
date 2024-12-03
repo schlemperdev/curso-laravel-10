@@ -14,6 +14,27 @@
                 <div class="invalid-feedback"> {{ $errors->first('numeroDaVenda') }} </div>
             @endif
         </div>
+
+        <div class="mb-3">
+            <label class="form-label"> Cliente </label>
+            <select class="form-select" name="cliente_id">
+                <option selected>Clique para selecionar o cliente</option>
+                @foreach ($findCliente as $cliente)
+                    <option value="{{ $cliente->id }}">{{ $cliente->nome }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label"> Produto </label>
+            <select class="form-select" name="produto_id">
+                <option selected>Clique para selecionar o produto vendido</option>
+                @foreach ($findProduto as $produto)
+                    <option value="{{ $produto->id }}">{{ $produto->nome }}</option>
+                @endforeach
+            </select>
+        </div>
+
         <button type="submit" class="btn btn-success">Cadastrar</button>
     </form>
 @endsection

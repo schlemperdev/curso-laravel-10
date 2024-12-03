@@ -25,6 +25,7 @@
                     <th>Nº da venda</th>
                     <th>Cliente</th>
                     <th>Produto</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,16 +35,12 @@
                         <td>{{ $venda->numeroDaVenda }}</td>
                         <td>{{ $venda->cliente->nome }}</td>
                         <td>{{ $venda->produto->nome }}</td>
-                        {{-- <td>
+                        <td>
                             <meta name='csrf-token' content="{{ csrf_token() }}"/>
-                            <a href="{{ route('atualizar.cliente', $venda->id) }}" class="btn btn-dark btn-sm">
-                                Editar
+                            <a href="" class="btn btn-dark btn-sm">
+                                Enviar E-mail
                             </a>
-                            <meta name='csrf-token' content="{{ csrf_token() }}"/>
-                            <a onclick="deleteRegistroPaginacao('{{ route('cliente.delete') }}', {{ $cliente->id }} )" class="btn btn-danger btn-sm">
-                                Excluir
-                            </a>
-                        </td> --}}
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
