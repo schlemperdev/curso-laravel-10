@@ -49,4 +49,6 @@ Route::prefix('vendas')->group( function (){
     //Cadastro Create
     Route::get('/cadastrarVenda', [VendasController::class, 'cadastrarVenda'])->name('cadastrar.venda');
     Route::post('/cadastrarVenda', [VendasController::class, 'cadastrarVenda'])->name('cadastrar.venda');
+    Route::get('/enviaComprovanteEmail/{id}', [VendasController::class, 'enviaComprovanteEmail'])->name('enviaComprovanteEmail.venda');
+
 });
