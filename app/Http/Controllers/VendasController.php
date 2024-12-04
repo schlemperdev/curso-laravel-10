@@ -49,10 +49,12 @@ class VendasController extends Controller
         $produtoNome = $buscaVenda->produto->nome;
         $clienteEmail = $buscaVenda->cliente->email;
         $clienteNome = $buscaVenda->cliente->nome;
+        $numeroDaVenda = $buscaVenda->numeroDaVenda;
         
         $sendMailData = [
             'produtoNome' => $produtoNome,
             'clienteNome' => $clienteNome,
+            'numeroDaVenda' => $numeroDaVenda,
         ];
 
         Mail::to($clienteEmail)->send(new ComprovanteDeVenda($sendMailData));
