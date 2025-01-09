@@ -14,6 +14,7 @@ namespace Composer;
 
 use Composer\Autoload\ClassLoader;
 use Composer\Semver\VersionParser;
+use PharIo\Version\VersionConstraintParser;
 
 /**
  * This class is copied in every Composer installed project and available to all
