@@ -3,7 +3,7 @@
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProdutosController;
-use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\VendasController;
 use Illuminate\Support\Facades\Route;
 
@@ -54,6 +54,14 @@ Route::prefix('vendas')->group( function (){
     Route::get('/enviaComprovanteEmail/{id}', [VendasController::class, 'enviaComprovanteEmail'])->name('enviaComprovanteEmail.venda');
 });
 
-Route::prefix('usuario')->group( function (){
-    Route::get('/', [UsuarioController::class, 'index'])->name('usuario.index');
+Route::prefix('usuarios')->group( function (){
+    Route::get('/', [UsuariosController::class, 'index'])->name('usuarios.index');
+    //Cadastro Create
+    Route::get('/cadastrarUsuario', [UsuariosController::class, 'cadastrarUsuario'])->name('cadastrar.usuario');
+    Route::post('/cadastrarUsuario', [UsuariosController::class, 'cadastrarUsuario'])->name('cadastrar.usuario');
+    //Atualiza Update
+    Route::get('/atualizarUsuario/{id}', [UsuariosController::class, 'atualizarUsuario'])->name('atualizar.usuario');
+    Route::put('/atualizarUsuario/{id}', [UsuariosController::class, 'atualizarUsuario'])->name('atualizar.usuario');
+    //Deletar Delete
+    Route::delete('/delete', [UsuariosController::class, 'delete'])->name('usuario.delete');
 });

@@ -54,7 +54,7 @@
               <h5 class="card-title">Usuários</h5>
               <p class="card-text">Total de usuários cadastrados no sistema.</p>
                 <div class="badge text-bg-light text-wrap" style="width: 6rem;">
-                    <p class="h5">{{ $totalProdutos }}</p>
+                    <p class="h5">{{ $totalUsuarios }}</p>
                 </div>
             </div>
           </div>

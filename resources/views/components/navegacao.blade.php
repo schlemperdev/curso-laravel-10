@@ -46,7 +46,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="{{ route('usuario.index') }}">
+                    <a class="nav-link d-flex align-items-center gap-2" href="{{ route('usuarios.index') }}">
                         <svg class="bi">
                             <use xlink:href="#people"/>
                         </svg>
